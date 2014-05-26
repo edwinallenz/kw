@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @lider.nombre %>
+</p>
+
+<p>
+  <strong>Direccion:</strong>
+  <%= @lider.direccion %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @lider.telefono %>
+</p>
+
+<p>
+  <strong>Empresa:</strong>
+  <%= @lider.empresa %>
+</p>
+
+<%= link_to 'Edit', edit_lider_path(@lider) %> |
+<%= link_to 'Back', liders_path %>

@@ -1,0 +1,33 @@
+<%= form_for(@lider) do |f| %>
+  <% if @lider.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@lider.errors.count, "error") %> prohibited this lider from being saved:</h2>
+
+      <ul>
+      <% @lider.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %><br>
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :direccion %><br>
+    <%= f.text_field :direccion %>
+  </div>
+  <div class="field">
+    <%= f.label :telefono %><br>
+    <%= f.text_field :telefono %>
+  </div>
+  <div class="field">
+    <%= f.label :empresa_id %><br>
+    <%= f.text_field :empresa_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
