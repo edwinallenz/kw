@@ -1,1 +1,1 @@
-web: bundle exec rails s -p $ACCOUNTS_PORT -e $RAILS_ENV -P $RAILS_PID
+web: bundle exec rails s -p $PORT -e $RAILS_ENV
