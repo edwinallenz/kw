@@ -1,0 +1,4 @@
+mod 'apt',             :git => 'https://github.com/puppetlabs/puppetlabs-apt.git', :ref => '1.4.1'
+mod 'stdlib',          :git => 'https://github.com/puppetlabs/puppetlabs-stdlib.git'
+mod 'bluekite_ruby',   :git => 'git@github.com:blue-kite/puppet-bluekite-ruby.git'
+mod 'postgresql',      :git => 'https://github.com/puppetlabs/puppetlabs-postgresql.git'

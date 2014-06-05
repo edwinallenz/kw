@@ -1,0 +1,49 @@
+FORGE
+  remote: http://forge.puppetlabs.com
+  specs:
+    puppetlabs/apt (1.4.0)
+      puppetlabs/stdlib (>= 2.2.1)
+    puppetlabs/concat (1.1.0)
+      puppetlabs/stdlib (>= 4.0.0)
+    puppetlabs/firewall (1.1.2)
+    puppetlabs/stdlib (4.2.2)
+
+GIT
+  remote: git@github.com:blue-kite/puppet-bluekite-ruby.git
+  ref: master
+  sha: 23d43013770f90fabed3e66f8a11421412a2f1ba
+  specs:
+    bluekite_ruby (0.0.1)
+
+GIT
+  remote: https://github.com/puppetlabs/puppetlabs-apt.git
+  ref: 1.4.1
+  sha: f9247b55aa6fe83ef1eaf0cc76d0e7942b5946cd
+  specs:
+    apt (1.4.1)
+      puppetlabs/stdlib (>= 2.2.1)
+
+GIT
+  remote: https://github.com/puppetlabs/puppetlabs-postgresql.git
+  ref: master
+  sha: dcd1741c0378e2261b9c7ba57e6477db14ace649
+  specs:
+    postgresql (3.3.3)
+      puppetlabs/apt (< 2.0.0, >= 1.1.0)
+      puppetlabs/concat (< 2.0.0, >= 1.0.0)
+      puppetlabs/firewall (>= 0.0.4)
+      puppetlabs/stdlib (< 5.0.0, >= 3.2.0)
+
+GIT
+  remote: https://github.com/puppetlabs/puppetlabs-stdlib.git
+  ref: master
+  sha: f9f6e92dffa8364cfbbd92a6a65f4be4ef176d2c
+  specs:
+    stdlib (4.2.1)
+
+DEPENDENCIES
+  apt (>= 0)
+  bluekite_ruby (>= 0)
+  postgresql (>= 0)
+  stdlib (>= 0)
+

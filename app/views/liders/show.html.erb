@@ -1,24 +1,27 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Lider -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @lider.nombre %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:nombre) %>:</strong></dt>
+  <dd><%= @lider.nombre %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:direccion) %>:</strong></dt>
+  <dd><%= @lider.direccion %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:telefono) %>:</strong></dt>
+  <dd><%= @lider.telefono %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:empresa_id) %>:</strong></dt>
+  <dd><%= @lider.empresa_id %></dd>
+</dl>
 
-<p>
-  <strong>Direccion:</strong>
-  <%= @lider.direccion %>
-</p>
-
-<p>
-  <strong>Telefono:</strong>
-  <%= @lider.telefono %>
-</p>
-
-<p>
-  <strong>Empresa:</strong>
-  <%= @lider.empresa %>
-</p>
-
-<%= link_to 'Edit', edit_lider_path(@lider) %> |
-<%= link_to 'Back', liders_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              liders_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_lider_path(@lider), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              lider_path(@lider),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

@@ -1,31 +1,42 @@
-<h1>Listing empresas</h1>
-
-<table>
+<%- model_class = Empresa -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Nombre</th>
-      <th>Direccion</th>
-      <th>Comunidad</th>
-      <th>Municipio</th>
-      <th colspan="3"></th>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:nombre) %></th>
+      <th><%= model_class.human_attribute_name(:direccion) %></th>
+      <th><%= model_class.human_attribute_name(:comunidad) %></th>
+      <th><%= model_class.human_attribute_name(:municipio) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @empresas.each do |empresa| %>
       <tr>
+        <td><%= link_to empresa.id, empresa_path(empresa) %></td>
         <td><%= empresa.nombre %></td>
         <td><%= empresa.direccion %></td>
         <td><%= empresa.comunidad %></td>
         <td><%= empresa.municipio %></td>
-        <td><%= link_to 'Show', empresa %></td>
-        <td><%= link_to 'Edit', edit_empresa_path(empresa) %></td>
-        <td><%= link_to 'Destroy', empresa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l empresa.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_empresa_path(empresa), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      empresa_path(empresa),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Empresa', new_empresa_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_empresa_path,
+            :class => 'btn btn-primary' %>

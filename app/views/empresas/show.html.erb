@@ -1,24 +1,27 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Empresa -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @empresa.nombre %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:nombre) %>:</strong></dt>
+  <dd><%= @empresa.nombre %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:direccion) %>:</strong></dt>
+  <dd><%= @empresa.direccion %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:comunidad) %>:</strong></dt>
+  <dd><%= @empresa.comunidad %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:municipio) %>:</strong></dt>
+  <dd><%= @empresa.municipio %></dd>
+</dl>
 
-<p>
-  <strong>Direccion:</strong>
-  <%= @empresa.direccion %>
-</p>
-
-<p>
-  <strong>Comunidad:</strong>
-  <%= @empresa.comunidad %>
-</p>
-
-<p>
-  <strong>Municipio:</strong>
-  <%= @empresa.municipio %>
-</p>
-
-<%= link_to 'Edit', edit_empresa_path(@empresa) %> |
-<%= link_to 'Back', empresas_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              empresas_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_empresa_path(@empresa), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              empresa_path(@empresa),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
