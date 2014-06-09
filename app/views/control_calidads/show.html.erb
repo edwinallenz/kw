@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @control_calidad.fecha %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @control_calidad.status %>
+</p>
+
+<p>
+  <strong>No articulos:</strong>
+  <%= @control_calidad.no_articulos %>
+</p>
+
+<p>
+  <strong>Articulos buenos:</strong>
+  <%= @control_calidad.articulos_buenos %>
+</p>
+
+<p>
+  <strong>Articulos defetuosos:</strong>
+  <%= @control_calidad.articulos_defetuosos %>
+</p>
+
+<p>
+  <strong>Iteracion:</strong>
+  <%= @control_calidad.iteracion %>
+</p>
+
+<p>
+  <strong>Participante:</strong>
+  <%= @control_calidad.participante %>
+</p>
+
+<p>
+  <strong>Orden produccion:</strong>
+  <%= @control_calidad.orden_produccion %>
+</p>
+
+<p>
+  <strong>Articulo:</strong>
+  <%= @control_calidad.articulo %>
+</p>
+
+<p>
+  <strong>Tecnico:</strong>
+  <%= @control_calidad.tecnico %>
+</p>
+
+<%= link_to 'Edit', edit_control_calidad_path(@control_calidad) %> |
+<%= link_to 'Back', control_calidads_path %>

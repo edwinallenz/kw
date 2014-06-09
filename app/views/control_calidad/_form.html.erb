@@ -1,0 +1,17 @@
+<%= simple_form_for @control_calidad, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :fecha %>
+  <%= f.input :status %>
+  <%= f.input :no_articulos %>
+  <%= f.input :articulos_buenos %>
+  <%= f.input :articulos_defetuosos %>
+  <%= f.input :iteracion %>
+  <%= f.input :participante_id %>
+  <%= f.input :orden_produccion_id %>
+  <%= f.input :articulo_id %>
+  <%= f.input :tecnico_id %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                control_calidad_path, :class => 'btn' %>
+  </div>
+<% end %>

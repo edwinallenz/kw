@@ -1,0 +1,24 @@
+<%= simple_form_for(@orden_produccion,  :html => { :class => 'form-horizontal' })  do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :fecha, as: :string,input_html: { class: 'ui-datepicker' }  %>
+    <%= f.input :fecha_entrega, as: :string %>
+    <%= f.input :no %>
+    <%= f.input :tipo %>
+    <%= f.input :estado %>
+    <%= f.input :priridad %>
+    <%= f.input :cantidad %>
+    <%= f.input :unidades_pleneadas %>
+    <%= f.input :unidades_real %>
+    <%= f.association :empresa, label_method: :nombre, value_method: :id, include_blank: false %>
+    <%= f.association :articulo , label_method: :nombre, value_method: :id, include_blank: false %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+    orden_produccions_path, :class => 'btn' %>
+
+  </div>
+<% end %>

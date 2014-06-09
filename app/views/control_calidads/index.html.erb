@@ -1,0 +1,43 @@
+<h1>Listing control_calidads</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Status</th>
+      <th>No articulos</th>
+      <th>Articulos buenos</th>
+      <th>Articulos defetuosos</th>
+      <th>Iteracion</th>
+      <th>Participante</th>
+      <th>Orden produccion</th>
+      <th>Articulo</th>
+      <th>Tecnico</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @control_calidads.each do |control_calidad| %>
+      <tr>
+        <td><%= control_calidad.fecha %></td>
+        <td><%= control_calidad.status %></td>
+        <td><%= control_calidad.no_articulos %></td>
+        <td><%= control_calidad.articulos_buenos %></td>
+        <td><%= control_calidad.articulos_defetuosos %></td>
+        <td><%= control_calidad.iteracion %></td>
+        <td><%= control_calidad.participante %></td>
+        <td><%= control_calidad.orden_produccion %></td>
+        <td><%= control_calidad.articulo %></td>
+        <td><%= control_calidad.tecnico %></td>
+        <td><%= link_to 'Show', control_calidad %></td>
+        <td><%= link_to 'Edit', edit_control_calidad_path(control_calidad) %></td>
+        <td><%= link_to 'Destroy', control_calidad, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Control calidad', new_control_calidad_path %>

@@ -1,0 +1,1 @@
+json.extract! @control_calidad, :id, :fecha, :status, :no_articulos, :articulos_buenos, :articulos_defetuosos, :iteracion, :participante_id, :orden_produccion_id, :articulo_id, :tecnico_id, :created_at, :updated_at

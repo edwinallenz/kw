@@ -1,0 +1,39 @@
+<%- model_class = ControlCalidad -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:fecha) %>:</strong></dt>
+  <dd><%= @control_calidad.fecha %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:status) %>:</strong></dt>
+  <dd><%= @control_calidad.status %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:no_articulos) %>:</strong></dt>
+  <dd><%= @control_calidad.no_articulos %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:articulos_buenos) %>:</strong></dt>
+  <dd><%= @control_calidad.articulos_buenos %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:articulos_defetuosos) %>:</strong></dt>
+  <dd><%= @control_calidad.articulos_defetuosos %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:iteracion) %>:</strong></dt>
+  <dd><%= @control_calidad.iteracion %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:participante_id) %>:</strong></dt>
+  <dd><%= @control_calidad.participante_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:orden_produccion_id) %>:</strong></dt>
+  <dd><%= @control_calidad.orden_produccion_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:articulo_id) %>:</strong></dt>
+  <dd><%= @control_calidad.articulo_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:tecnico_id) %>:</strong></dt>
+  <dd><%= @control_calidad.tecnico_id %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              control_calidad_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_control_calidad_path(@control_calidad), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              control_calidad_path(@control_calidad),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
