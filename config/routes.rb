@@ -1,9 +1,31 @@
 Rails.application.routes.draw do
+  resources :control_calidads
+
+  resources :participantes
+
+  resources :articulos
+
+  resources :tecnicas
+
+  resources :orden_produccions
+
   resources :empresas
 
   resources :liders
 
   resources :tecnicos
+
+   # if Rails.env.production?
+   #  offline = Rack::Offline.configure :cache_interval => 120 do
+   #    cache "empresas"
+   #    cache ActionController::Base.helpers.asset_path("application.css")
+   #    cache ActionController::Base.helpers.asset_path("application.js")
+   #    # cache other assets
+   #    network "/"  
+   #  end
+   #  get "/application.manifest" => offline  
+   #  end
+#  get "/application.manifest" => Rails::Offline
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

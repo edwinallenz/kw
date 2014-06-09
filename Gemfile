@@ -41,4 +41,5 @@ gem 'rails_12factor', group: :production
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
+gem 'simple_form'
+#gem 'rack-offline'
